@@ -1,5 +1,23 @@
 from pydantic import BaseModel, Field
 
+ 
+VALID_ERROR_TYPES = {
+    "grammar",
+    "spelling",
+    "word_choice",
+    "punctuation",
+    "word_order",
+    "missing_word",
+    "extra_word",
+    "conjugation",
+    "gender_agreement",
+    "number_agreement",
+    "tone_register",
+    "other",
+}
+ 
+VALID_DIFFICULTIES = {"A1", "A2", "B1", "B2", "C1", "C2"}
+ 
 
 class ErrorDetail(BaseModel):
     original: str = Field(
